@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Hackathon Campus Hub</title>
+  </head>
+  <body class="page-body">
+    <header class="header">
+      <span class="logo">Campus Hub</span>
+
+      <nav class="nav-list">
+        <a href="#">Evenimente</a>
+        <a href="#">Resurse</a>
+        <a href="#">Contact</a>
+        <a href="#" class="btn-inscriere">Înscrie-te</a>
+      </nav>
+    </header>
+    <h1 class="titlu">Hackathon Campus Hub</h1>
+    <p id="subtitlu">O zi de proiecte, cod și pizza pentru toți cursanții.</p>
+
+    <hr class="separator" />
+
+    <div class="hero-image-container">
+      <img class="img-hero" src="hero-neon.png" alt="Hackathon" />
+    </div>
+
+    <br />
+    <br />
+
+    <section class="info-section">
+      <h2 id="info" class="titlu-sectiune">Informatii</h2>
+      <p id="info2">Descopera informatii despre evenimentul nostru</p>
+      <p class="link-inscriere-wrapper">
+        <a
+          class="btn-link"
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a"
+          >Vezi pagina de înscriere</a
+        >
+      </p>
+    </section>
+
+    <ul class="lista-info">
+      <li class="item-info">
+        <i class="fa-solid fa-clock icon-list"></i> Sambata ora 10:00
+      </li>
+      <li class="item-info">
+        <i class="fa-solid fa-location-dot icon-list"></i> Sala 10
+      </li>
+      <li class="item-info">
+        <i class="fa-solid fa-laptop icon-list"></i> Laptop necesar
+      </li>
+    </ul>
+
+    <div class="form-container">
+      <i class="fa-solid fa-envelope icon-mail"></i>
+      <form action="" class="form-inscriere">
+        <input class="mail" type="email" placeholder="radu.baraian@yahoo.com" />
+        <button class="btn-submit">Mă înscriu</button>
+      </form>
+    </div>
+
+    <br />
+
+    <div class="table-container">
+      <table class="table1">
+        <tr>
+          <th class="celula-cap">Ora</th>
+          <th class="celula-cap">Activitate</th>
+        </tr>
+        <tr>
+          <td class="celula">10:00</td>
+          <td class="celula">Deschidere</td>
+        </tr>
+      </table>
+    </div>
+
+    <br />
+
+    <div class="calendar-image-container">
+      <img class="img-calendar" src="calendar-neon.png" alt="Calendar" />
+    </div>
+
+    <section class="events-section">
+      <h2 class="titlu-sectiune">Evenimente</h2>
+      <p class="text-sectiune">Programul evenimentelor Hackathon 2026</p>
+      <p></p>
+    </section>
+
+    <ul class="lista-zile">
+      <li class="item-zi">
+        <a class="zi-link" href="https://intro.itschool.ro/">Ziua 1</a>
+      </li>
+      <li class="item-zi">
+        <a
+          class="ziua2 zi-link"
+          href="https://itschool.ro/cursuri/curs-data-analysis-online"
+          >Ziua 2</a
+        >
+      </li>
+      <li class="item-zi">
+        <a
+          class="zi-link"
+          href="https://itschool.ro/cursuri/curs-programare-python-online"
+          >Ziua 3</a
+        >
+      </li>
+    </ul>
+
+    <div class="cards-wrapper">
+      <div class="card">
+        <span class="badge-nou">NOU</span>
+        <h3 class="card-titlu">Hackathon</h3>
+        <p class="card-text">Descrierea evenimentului.</p>
+      </div>
+
+      <div class="card">
+        <h3 class="card-titlu">Workshop CSS</h3>
+        <p class="card-text">Descrierea evenimentului.</p>
+      </div>
+
+      <div class="card">
+        <h3 class="card-titlu">Meetup</h3>
+        <p class="card-text">Descrierea evenimentului.</p>
+      </div>
+    </div>
+
+    <br />
+
+    <section class="about-section">
+      <h2 id="section" class="titlu-sectiune">
+        Ce reprezinta elementul section in HTML?
+      </h2>
+      <p class="section-description">
+        Este o bucată din pagina in care pui laolaltă lucrurile care tin de
+        acelasi subiect, pentru a fi mai usor de inteles si de organizat, cum ar
+        fi „Informatii" sau „Evenimente".
+      </p>
+      <div class="video-container">
+        <iframe
+          class="video-iframe"
+          src="https://www.youtube.com/embed/08b6OJbL3Cs"
+          title="Ce este section?"
+          width="400"
+          height="300"
+        >
+        </iframe>
+      </div>
+    </section>
+
+    <button class="btn-chat"><i class="fa-solid fa-comment"></i> Chat</button>
+
+    <!-- Footer semantic, ultimul element din body -->
+    <footer class="footer">
+      <p>© 2026 Campus Hub</p>
+      <nav class="footer-links">
+        <a href="#">Contact</a>
+        <a href="#">Termeni</a>
+      </nav>
+    </footer>
+  </body>
+</html>

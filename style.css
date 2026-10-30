@@ -1,0 +1,578 @@
+/* ==========================================================
+   0. VARIABILE CSS & SETĂRI GLOBALE (:root)
+   ========================================================== */
+:root {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-header: #0f172a;
+  --color-text-main: #1e293b;
+  --color-text-muted: #64748b;
+  --color-border: #cbd5e1;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  --transition: all 0.25s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 32px;
+}
+
+a {
+  color: var(--color-primary);
+  transition: var(--transition);
+}
+
+/* ==========================================================
+   1. HEADER: bară de navigare fixată sus
+   ========================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-header);
+  color: #ffffff;
+  padding: 18px 40px;
+  box-shadow: var(--shadow-md);
+  border-bottom: 3px solid var(--color-primary);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: #cbd5e1;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-list a:hover {
+  color: #ffffff;
+}
+
+a.btn-inscriere {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a.btn-inscriere:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================
+   2. TITLU, SUBTITLU, SEPARATOR
+   ========================================================== */
+.titlu {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-header);
+  margin: 32px auto 0 auto;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+#subtitlu {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.separator {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 12px 40px;
+}
+
+/* ==========================================================
+   3. IMAGINI (hero și calendar)
+   ========================================================== */
+.hero-image-container,
+.calendar-image-container {
+  max-width: 600px; /* Poți schimba această valoare: 500px, 600px, 700px etc. */
+  width: 100%; /* Asigură-te că rămâne fluidă pe ecrane mici */
+  height: auto;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  box-shadow: var(--shadow-sm);
+  display: block;
+  margin: 0 auto;
+}
+
+.img-hero,
+.img-calendar {
+  max-width: 100%;
+  height: auto;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================
+   4. SECȚIUNI GENERALE
+   ========================================================== */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px 40px;
+}
+
+.titlu-sectiune {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--color-header);
+  margin: 0;
+}
+
+#info2,
+.text-sectiune,
+.section-description {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  margin: 0;
+  text-align: center;
+}
+
+.link-inscriere-wrapper {
+  margin: 8px 0 0 0;
+}
+
+.btn-link,
+.zi-link {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 22px;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.btn-link:hover,
+.zi-link:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================
+   5. LISTE & RÂNDURI ALTERNATE (:nth-child)
+   ========================================================== */
+.lista-info,
+.lista-zile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.item-info,
+.item-zi {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--color-surface);
+  font-weight: 500;
+  padding: 16px 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.item-info:hover,
+.item-zi:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Rânduri alternate cu :nth-child(even) */
+.lista-info .item-info:nth-child(even),
+.lista-zile .item-zi:nth-child(even) {
+  background-color: #f1f5f9;
+}
+
+.icon-list {
+  color: var(--color-primary);
+}
+
+/* ==========================================================
+   6. FORMULAR DE ÎNSCRIERE
+   ========================================================== */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--color-surface);
+  padding: 32px 40px;
+  margin: 0 auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.icon-mail {
+  font-size: 24px;
+  color: var(--color-primary);
+}
+
+.form-inscriere {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mail {
+  min-width: 260px;
+  font-size: 15px;
+  color: var(--color-text-main);
+  padding: 12px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: var(--transition);
+}
+
+.mail:focus-visible {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.btn-submit {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-submit:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================
+   7. TABEL (program)
+   ========================================================== */
+.table-container {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.table1 {
+  background-color: var(--color-surface);
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.celula-cap {
+  background-color: #f1f5f9;
+  color: var(--color-header);
+  font-weight: 600;
+  padding: 16px 28px;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.celula {
+  color: var(--color-text-main);
+  padding: 16px 28px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table1 tr:last-child .celula {
+  border-bottom: none;
+}
+
+/* Rânduri alternate în tabel */
+.table1 tr:nth-child(even) .celula {
+  background-color: #f8fafc;
+}
+
+/* ==========================================================
+   8. CARDURI, TRANZIȚII & KEYFRAMES (Badge NOU pulsant)
+   ========================================================== */
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Tranziție pusă direct pe .card */
+.card {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: var(--color-surface);
+  padding: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  border-top: 4px solid var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Efect de box-shadow și ridicare la hover */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Animație @keyframes pentru badge */
+@keyframes pulseaza {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.badge-nou {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 1;
+  background-color: #10b981;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: pulseaza 1.8s infinite ease-in-out;
+}
+
+.card-titlu {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-header);
+  margin: 0;
+}
+
+.card-text {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ==========================================================
+   9. DESPRE, VIDEO, FOOTER & CHAT
+   ========================================================== */
+.video-container {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}
+
+.video-iframe {
+  max-width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  background-color: var(--color-header);
+  padding: 28px 40px;
+  margin-top: 32px;
+  border-top: 3px solid var(--color-primary);
+}
+
+.footer p {
+  font-size: 14px;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: #93c5fd;
+}
+
+.btn-chat {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 200;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-chat:hover {
+  background-color: var(--color-primary-hover);
+  transform: scale(1.05);
+}
+
+/* ==========================================================
+   10. RESPONSIVE DESIGN
+   ========================================================== */
+@media (max-width: 1024px) {
+  section {
+    padding: 24px;
+  }
+  .cards-wrapper {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .titlu {
+    font-size: 1.875rem;
+  }
+
+  .cards-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .lista-info,
+  .lista-zile,
+  .form-inscriere,
+  .form-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mail,
+  .btn-submit {
+    width: 100%;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    padding: 24px 20px;
+  }
+
+  .btn-chat {
+    bottom: 16px;
+    right: 16px;
+  }
+}
